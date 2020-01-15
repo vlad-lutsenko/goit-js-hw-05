@@ -23,49 +23,27 @@ class Car {
     return (this._price = amount);
   }
 
-  /*
-   * Добавь код для того чтобы завести автомобиль
-   * Записывает в свойство isOn значение true
-   */
   turnOn() {
     this.isOn = true;
   }
 
-  /*
-   * Добавь код для того чтобы заглушить автомобиль
-   * Записывает в свойство isOn значение false,
-   * и сбрасывает текущую скорость в 0
-   */
   turnOff() {
     this.isOn = false;
     this.speed = 0;
   }
 
-  /*
-   * Добавялет к свойству speed полученное значение,
-   * при условии что результирующая скорость
-   * не больше чем значение свойства maxSpeed
-   */
   accelerate(value) {
     if (this.speed + value <= this.maxSpeed /*&& this.isOn === true*/) {
       this.speed += value;
     }
   }
 
-  /*
-   * Отнимает от свойства speed полученное значение,
-   * при условии что результирующая скорость не меньше нуля
-   */
   decelerate(value) {
     if (this.speed - value >= 0 /*&& this.isOn === true*/) {
       this.speed -= value;
     }
   }
 
-  /*
-   * Добавляет в поле distance киллометраж (hours * speed),
-   * но только в том случае если машина заведена!
-   */
   drive(hours) {
     if (this.isOn) {
       this.distance += hours * this.speed;
